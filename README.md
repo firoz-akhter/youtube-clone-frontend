@@ -61,17 +61,3 @@ Build a fully functional YouTube-like application using modern web technologies.
 Implement a scalable frontend with React and Tailwind CSS.
 Design and implement a robust backend with Express.js and MongoDB.
 Apply authentication and error-handling best practices.
-
-Project Workflow
-Frontend Development:
-
-Built using React components structured for modularity and reusability.
-Styled entirely with Tailwind CSS for a modern and consistent UI.
-Backend Development:
-
-API routes implemented with Express.js for handling data operations.
-Middleware for authentication, error handling, and logging.
-MongoDB for data storage, managed with Mongoose.
-Full-Stack Integration:
-
-Frontend and backend connected via RESTful API calls using Axios as well as Fetch.
