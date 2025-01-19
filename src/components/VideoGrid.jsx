@@ -33,16 +33,47 @@ const VideoGrid = ({ searchQuery, selectedFilter }) => {
     }
   };
 
+  async function incrementView(videoId) {
+    console.log("trying to increment the view...");
+    try {
+      const response = await fetch(`http://localhost:3001/addview/${videoId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      console.log("response", response);
+
+      if (response.ok) {
+        console.log("inside if");
+        const data = await response.json();
+        console.log(data.message);
+        console.log(`Updated views: ${data.video.views}`);
+      } else {
+        console.error("Failed to increment view:", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred while incrementing view:", error);
+    }
+  }
+
   // Filter videos by title and selected filter
-  const filteredVideos = data.filter((video) =>
-    (selectedFilter === "All" || video.title.toLowerCase().includes(selectedFilter.toLowerCase())) &&
-    video.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredVideos = data.filter(
+    (video) =>
+      (selectedFilter === "All" ||
+        video.title.toLowerCase().includes(selectedFilter.toLowerCase())) &&
+      video.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
       {filteredVideos.map((video) => (
-        <Link key={video._id} to={`/video/${video._id}`}>
+        <Link
+          onClick={() => incrementView(video._id)}
+          key={video._id}
+          to={`/video/${video._id}`}
+        >
           <VideoCard video={video} />
         </Link>
       ))}

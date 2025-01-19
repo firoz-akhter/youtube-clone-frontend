@@ -8,7 +8,7 @@ const Login = lazy(() => import("./components/Login"));
 const Register = lazy(() => import("./components/Register"));
 
 const UserProfile = lazy(() => import("./components/UserProfile"));
-const ChannelView = lazy(() => import("./components/Channelview"));
+const ChannelView = lazy(() => import("./components/ChannelView"));
 const Error = lazy(() => import("./components/Error"));
 
 function App() {

@@ -64,8 +64,15 @@ function Sidebar() {
                 }}
                 className="hover:bg-gray-300"
               >
-                <img src={item.icon} alt={item.label} width="20" style={{ marginRight: "16px" }} />
-                <span style={{ fontSize: "14px", fontWeight: "400", color: "#333" }}>
+                <img
+                  src={item.icon}
+                  alt={item.label}
+                  width="20"
+                  style={{ marginRight: "16px" }}
+                />
+                <span
+                  style={{ fontSize: "14px", fontWeight: "400", color: "#333" }}
+                >
                   <Link to={item.path}>{item.label}</Link> {/* Use Link here */}
                 </span>
               </div>
@@ -74,7 +81,15 @@ function Sidebar() {
 
           <div>
             <hr style={{ width: "200px", marginTop: "10px" }} />
-            <h3 style={{ margin: "10px", fontFamily: "sans-serif", fontSize: "18px" }}>You</h3>
+            <h3
+              style={{
+                margin: "10px",
+                fontFamily: "sans-serif",
+                fontSize: "18px",
+              }}
+            >
+              You
+            </h3>
             {SidebarYou.map((item, index) => (
               <div
                 key={index}
@@ -86,8 +101,15 @@ function Sidebar() {
                 }}
                 className="hover:bg-gray-300"
               >
-                <img src={item.icon} alt={item.label} width="20" style={{ marginRight: "16px" }} />
-                <span style={{ fontSize: "14px", fontWeight: "400", color: "#333" }}>
+                <img
+                  src={item.icon}
+                  alt={item.label}
+                  width="20"
+                  style={{ marginRight: "16px" }}
+                />
+                <span
+                  style={{ fontSize: "14px", fontWeight: "400", color: "#333" }}
+                >
                   <Link to={item.path}>{item.label}</Link> {/* Use Link here */}
                 </span>
               </div>
@@ -96,7 +118,15 @@ function Sidebar() {
 
           <div>
             <hr style={{ width: "200px", marginTop: "10px" }} />
-            <h3 style={{ margin: "10px", fontFamily: "sans-serif", fontSize: "18px" }}>Explore</h3>
+            <h3
+              style={{
+                margin: "10px",
+                fontFamily: "sans-serif",
+                fontSize: "18px",
+              }}
+            >
+              Explore
+            </h3>
             {Explore.map((item, index) => (
               <div
                 key={index}
@@ -108,8 +138,15 @@ function Sidebar() {
                 }}
                 className="hover:bg-gray-300"
               >
-                <img src={item.icon} alt={item.label} width="20" style={{ marginRight: "16px" }} />
-                <span style={{ fontSize: "14px", fontWeight: "400", color: "#333" }}>
+                <img
+                  src={item.icon}
+                  alt={item.label}
+                  width="20"
+                  style={{ marginRight: "16px" }}
+                />
+                <span
+                  style={{ fontSize: "14px", fontWeight: "400", color: "#333" }}
+                >
                   <Link to={item.path}>{item.label}</Link> {/* Use Link here */}
                 </span>
               </div>
@@ -129,8 +166,15 @@ function Sidebar() {
                 }}
                 className="hover:bg-gray-300"
               >
-                <img src={item.icon} alt={item.label} width="20" style={{ marginRight: "16px" }} />
-                <span style={{ fontSize: "14px", fontWeight: "400", color: "#333" }}>
+                <img
+                  src={item.icon}
+                  alt={item.label}
+                  width="20"
+                  style={{ marginRight: "16px" }}
+                />
+                <span
+                  style={{ fontSize: "14px", fontWeight: "400", color: "#333" }}
+                >
                   <Link to={item.path}>{item.label}</Link> {/* Use Link here */}
                 </span>
               </div>

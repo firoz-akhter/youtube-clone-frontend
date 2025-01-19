@@ -12,7 +12,6 @@ function Homepage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("All"); // New state for selected filter
 
-
   const handleSearchChange = (query) => {
     setSearchQuery(query);
   };
@@ -56,7 +55,10 @@ function Homepage() {
           <FilterBar handleFilterChange={handleFilterChange} />
 
           <div className="flex-1 overflow-y-auto p-4">
-            <VideoGrid searchQuery={searchQuery} selectedFilter={selectedFilter} />
+            <VideoGrid
+              searchQuery={searchQuery}
+              selectedFilter={selectedFilter}
+            />
           </div>
         </div>
       </div>

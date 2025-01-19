@@ -6,7 +6,7 @@ import Channel from "./Channel";
 
 const UserProfile = () => {
   const userData = JSON.parse(localStorage.getItem("userData"));
-  console.log("userData", userData)
+  // console.log("userData", userData)
   const token = localStorage.getItem("token");
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -16,26 +16,18 @@ const UserProfile = () => {
     if (!token) {
       navigate("/form"); // Redirect to login page if not logged in
     }
-  }, [ navigate]);
+  }, [navigate]);
 
   const handleToggle = () => {
     setIsCollapsed(!isCollapsed);
   };
-
-
 
   const handleLogout = () => {
     localStorage.clear();
     navigate("/");
   };
 
-
-
-
-
   return (
-
-
     <>
       <div className="sticky top-0 bg-white z-50">
         <Header toggleSidebar={handleToggle} />
@@ -59,7 +51,6 @@ const UserProfile = () => {
       </div>
 
       <div className="bg-white text-black text-right mr-12">
-
         <div className=" mb-6">
           <h1 className="text-2xl font-semibold">{userData.username}</h1>
         </div>
@@ -72,15 +63,10 @@ const UserProfile = () => {
             Logout
           </button>
         </div>
-
       </div>
 
-
       <Channel />
-
     </>
-
-
   );
 };
 

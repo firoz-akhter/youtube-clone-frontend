@@ -6,6 +6,7 @@ import { ImYoutube2 } from "react-icons/im";
 import { GoPlus } from "react-icons/go";
 
 const Header = ({ setIsCollapsed, onSearch }) => {
+  // console.log("setIsCollapsed", setIsCollapsed);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [firstletter, setFirstletter] = useState("F");
   const [searchTerm, setSearchTerm] = useState(""); // State for search term
@@ -28,7 +29,6 @@ const Header = ({ setIsCollapsed, onSearch }) => {
 
   return (
     <div className="sticky top-0 z-50 flex items-center justify-between px-2 sm:px-4 py-2 bg-white shadow-md">
-      {/* Hamburger Menu and Logo */}
       <div className="flex items-center space-x-2 sm:space-x-4">
         <button
           onClick={() => setIsCollapsed((prev) => !prev)}
@@ -38,7 +38,6 @@ const Header = ({ setIsCollapsed, onSearch }) => {
         </button>
         <div className="flex items-center space-x-1">
           <Link to={"/"}>
-            {/* <img src={youtubelogo} alt="YouTube Logo" className="h-4 w-[100%]  sm:h-6 sm:w-12 md:h-8" /> */}
             <ImYoutube2 size={40} />
           </Link>
         </div>
