@@ -36,13 +36,13 @@ function VideoPlayer() {
     // thi api call will also increment the views on backend
     const url = `http://localhost:3001/getVideo/${id}`;
 
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
 
-    if (!token) {
-      console.error("Token not found in localStorage");
-      setLoading(false);
-      return;
-    }
+    // if (!token) {
+    //   console.error("Token not found in localStorage");
+    //   setLoading(false);
+    //   return;
+    // }
 
     try {
       const response = await axios.get(url, {
@@ -439,22 +439,27 @@ function VideoPlayer() {
                       </div>
                     </div>
                     <div className="flex space-x-2">
-                      {comment.userId._id == userData._id && (
-                        <>
-                          <button
-                            className="px-6 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            // onClick={() => editComment(comment._id)}
-                            onClick={() => openPopup(comment.text, comment._id)}
-                          >
-                            Edit
-                          </button>
-                          <button
-                            className="px-6 py-1 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
-                            onClick={() => deleteComment(comment._id)}
-                          >
-                            Delete
-                          </button>
-                        </>
+                      {userData == undefined ? (
+                        <></>
+                      ) : (
+                        comment.userId._id === userData._id && (
+                          <>
+                            <button
+                              className="px-6 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                              onClick={() =>
+                                openPopup(comment.text, comment._id)
+                              }
+                            >
+                              Edit
+                            </button>
+                            <button
+                              className="px-6 py-1 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
+                              onClick={() => deleteComment(comment._id)}
+                            >
+                              Delete
+                            </button>
+                          </>
+                        )
                       )}
                     </div>
                   </div>
@@ -476,7 +481,7 @@ function VideoPlayer() {
           onClick={handleOutsideClick}
         >
           {/* Modal Content */}
-          <div className="bg-white p-8 rounded-lg shadow-lg w-1/3">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-1/3 w-96">
             <h2 className="text-2xl font-semibold mb-4">Edit your comment</h2>
             <input
               className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"

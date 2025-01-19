@@ -14,7 +14,7 @@ const VideoGrid = ({ searchQuery, selectedFilter }) => {
     const url = "http://localhost:3001/getAllVideos";
     const token = localStorage.getItem("token");
 
-    if (!token) return console.error("Token not found in localStorage");
+    // if (!token) return console.error("Token not found in localStorage");
 
     try {
       const response = await fetch(url, {
@@ -65,6 +65,8 @@ const VideoGrid = ({ searchQuery, selectedFilter }) => {
         video.title.toLowerCase().includes(selectedFilter.toLowerCase())) &&
       video.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  console.log("filteredVideos", filteredVideos);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">

@@ -14,7 +14,7 @@ const SideVideoGrid = ({ incrementLike }) => {
     const url = "http://localhost:3001/getAllVideos";
     const token = localStorage.getItem("token");
 
-    if (!token) return console.error("Token not found in localStorage");
+    // if (!token) return console.error("Token not found in localStorage");
 
     try {
       const response = await fetch(url, {

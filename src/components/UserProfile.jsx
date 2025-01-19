@@ -18,10 +18,6 @@ const UserProfile = () => {
     }
   }, [navigate]);
 
-  const handleToggle = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
   const handleLogout = () => {
     localStorage.clear();
     navigate("/");
@@ -30,7 +26,7 @@ const UserProfile = () => {
   return (
     <>
       <div className="sticky top-0 bg-white z-50">
-        <Header toggleSidebar={handleToggle} />
+        <Header setIsCollapsed={setIsCollapsed} />
       </div>
 
       <div
